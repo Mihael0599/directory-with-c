@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    char phoneNumbers[10][100] = {
+    char phoneNumbers[100][100] = {
         "+4915112345678",
         "+4915112345679",
         "+4915112345680",
@@ -16,13 +16,12 @@ int main(void)
         "+4915112345686",
         "+4915112345687",
     };
+    int nextIndex = 10; 
     if (showMenu() == 0)
     {
         showPhoneNumbers(phoneNumbers);
-    }
-    else
-    {
-        addPhoneNumber();
+    } else {
+        addPhoneNumber(phoneNumbers, nextIndex);
     }
 
     return 0;
