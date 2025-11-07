@@ -2,7 +2,7 @@
 #define FUNCTIONS_H
 
 int showMenu(void);
-void showPhoneNumbers(char numbers[100][100]);
+void showPhoneNumbers(char numbers[100][100], int nextIndex);
 void addPhoneNumber(char numbers[100][100], int nextIndex);
-
+void start(char phoneNumbers[100][100], int nextIndex);
 #endif

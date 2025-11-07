@@ -22,13 +22,14 @@ int showMenu(void)
     }
 }
 
-void showPhoneNumbers(char numbers[100][100])
+void showPhoneNumbers(char numbers[100][100], int nextIndex)
 {
     printf("Hier sind die gespeicherten Telefonnummern:\n");
-    for (int i = 0; i < 20; i++)
+    for (int i = 0; i < nextIndex; i++)
     {
         printf("(%d) %s\n", i + 1, numbers[i]);
     }
+    showMenu();
 }
 
 void addPhoneNumber(char numbers[100][100], int nextIndex)
@@ -39,5 +40,17 @@ void addPhoneNumber(char numbers[100][100], int nextIndex)
     scanf("%s", newNumber);
     strcpy(numbers[nextIndex], newNumber);
     nextIndex++;
-    showPhoneNumbers(numbers);
+    showPhoneNumbers(numbers, nextIndex);
+}
+
+void start(char phoneNumbers[100][100], int nextIndex)
+{
+    if (showMenu() == 0)
+    {
+        showPhoneNumbers(phoneNumbers, nextIndex);
+    }
+    else
+    {
+        addPhoneNumber(phoneNumbers, nextIndex);
+    }
 }

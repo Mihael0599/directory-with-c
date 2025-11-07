@@ -16,13 +16,9 @@ int main(void)
         "+4915112345686",
         "+4915112345687",
     };
-    int nextIndex = 10; 
-    if (showMenu() == 0)
-    {
-        showPhoneNumbers(phoneNumbers);
-    } else {
-        addPhoneNumber(phoneNumbers, nextIndex);
-    }
+    int nextIndex = 10;
 
+    start(phoneNumbers, nextIndex);
+    
     return 0;
 }
